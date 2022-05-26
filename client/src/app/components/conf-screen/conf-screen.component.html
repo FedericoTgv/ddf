@@ -1,0 +1,39 @@
+<h1 class="text-center">Pantalla de Configuración</h1>
+<div class="container">
+    <ng-container [formGroup]= "getTrainerForm()">
+    <ng-container  formArrayName="trainersFormArray" *ngFor="let trainer of trainersFormArray.controls; let i = index">                  
+        <form [formGroupName]="i">
+            <div class="row">
+                <label>Entrenador {{i+1}}</label>
+            </div>
+            <div class="row">            
+                <div class="col-xs-2 col-md-2 col-lg-2">
+                    <div class="input-group mb-1">
+                        <span>Nombre:&nbsp;&nbsp; </span>
+                        <input class="form-control" type="text" placeholder="ZTfer" formControlName="name" >
+                    </div>
+                </div>
+
+                <div class="col-xs-2 col-md-2 col-lg-2">
+                    <div class="input-group mb-1">
+                        <span>Valoración: </span>
+                        <input class="form-control" type="text" placeholder="ZTfer" formControlName="score">
+                    </div>
+                </div>
+
+                <div class="col-xs-4 col-md-4 col-lg-4">
+                    <div class="input-group mb-1">
+                        <span>Máximo número de clientes: </span>
+                        <input class="form-control" type="number" placeholder="ZTfer" formControlName="maxPlaces">
+                    </div>
+                </div>        
+            </div>
+        </form>
+        <hr>
+    </ng-container>
+    </ng-container>
+    <button type="button" class="btn btn-light float-end" (click) = "showCustomersTable()">Ver tabla de clientes</button>
+    <button type="button" class="btn btn-primary float-end" (click) = "calculateResults()">Calcular resultados</button>
+</div>
+
+

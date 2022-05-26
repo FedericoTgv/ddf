@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Tabla de clientes</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="closeModal();"
+    ></button>
+  </div>
+  <div class="modal-body">
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Importancia de la Reputación</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+    <ng-container *ngFor="let customer of getCustomerList(); let i = index">
+        <tr>
+            <td>{{customer.name}}</td>
+            <td>{{customer.trainerScoreImp}}</td>
+          </tr>
+    </ng-container>    
+    </tbody>
+    </table>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="closeModal();">
+      Close
+    </button>    
+  </div>

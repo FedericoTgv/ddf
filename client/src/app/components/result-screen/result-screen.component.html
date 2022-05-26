@@ -1,0 +1,22 @@
+<div class="container">
+    <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Entrenadores</a>
+      <ng-template ngbNavContent>
+      <ng-container *ngFor="let trainer of getTrainerList(); let i = index">                  
+        <app-trainer-card trainerIndex="{{i}}"></app-trainer-card>
+      </ng-container>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Valoración del Conjunto</a>
+      <ng-template ngbNavContent>
+        <app-score-summary></app-score-summary>
+      </ng-template>
+    </li>
+  </ul>  
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
+    
+  <button type="button" class="btn btn-light float-end" routerLink="/">Volver</button>
+
+</div>
