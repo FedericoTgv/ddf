@@ -1,0 +1,4 @@
+client/node_modules
+client/.angular
+client/.vscode
+server/node_modules
